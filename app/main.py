@@ -12,7 +12,7 @@ from .routers import user, post, authetication, vote
 
 app = FastAPI()
 
-origins = ["https://www.google.com"]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -24,7 +24,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to my API"}
+    return {"message": "Welcome to my API!!!"}
 
 app.include_router(post.router)
 app.include_router(user.router)
